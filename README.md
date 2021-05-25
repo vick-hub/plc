@@ -1,2 +1,2 @@
-# pl1c
+# Python Level I Course
 The Python Level I Course is an introductory hands-on, in depth guide to the Python programming language designed to give you a solid foundation in computer programming. It is delivered through online lectures, continuous assessment tests and programming challenges culminating in a mini-project. Through this course you will receive personal attention from the instructor together with tips and tricks that will fast-track you in your learning journey.

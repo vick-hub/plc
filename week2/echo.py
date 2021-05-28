@@ -3,6 +3,7 @@ import os
 
 
 def main():
+    # the Python console
     # print()
     # input()
     # variable names
@@ -10,6 +11,7 @@ def main():
     # good variable names
     # int, float, bool, str, None
     # str methods
+    # split and distribution
     return os.EX_OK
 
 

@@ -3,8 +3,9 @@ import os
 
 
 def main():
-    # operators: +, -, *, /, brackets
+    # operators: +, -, *, /, parentheses
     # numeric
+    # str
     return os.EX_OK
 
 

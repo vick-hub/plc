@@ -9,7 +9,15 @@ def main():
     s = set()
     print(s, type(s))
     s1 = {}
-    print(s1, type(s))
+    # My apologies! There was a typo here during the video.
+    # Instead of print(..., type(s1)) I wrote print(..., type(s)) so that it seemed like {} creates a set.
+    # This is not correct. {} is indeed a dictionary.
+    # It is confusing since Python uses {} for both dicts and sets.
+    # However, it is possible to create a one element set using {1,}
+    print(s1, type(s1))  # this is a dict, not a set
+    s1_correct = {1, }  # you can use anything in place of '1'
+    print(s1_correct, type(s1_correct))
+
     s2 = {1, 2, 3}
     print(s2)
     s3 = set([1, 2, 3, 4])
@@ -57,12 +65,12 @@ def main():
     print(f"s5 = {s5}, {len(s5)}")
     print(f"s6 = {s6}, {len(s6)}")
     # |, set.union(*others)
-    s7 = s5.union(s6) # combined
+    s7 = s5.union(s6)  # combined
     print(f"union = {s7}, {len(s7)}")
     print(s5 | s6)
     # &, set.intersection(*others)
     s8 = s5.intersection(s6)
-    print(f"intersect = {s8}, {len(s8)}") # occurs in both
+    print(f"intersect = {s8}, {len(s8)}")  # occurs in both
     # -, set.difference(*others)
     s9 = s5.difference(s6)
     s10 = s6.difference(s5)

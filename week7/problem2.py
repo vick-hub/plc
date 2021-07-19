@@ -4,9 +4,9 @@ import random
 
 
 def main():
-    with open("input_matrices.txt", 'r') as input:
+    with open("input_matrices.txt", 'r') as inpu_t:
         with open("matrix_products.txt", 'w') as output:
-            for line in input:
+            for line in inpu_t:
                 output.write(line)
                 for r in line:
                     matrix_product = ([r[0] * r[9] + r[1] * r[12] + r[2] * r[15], r[0] * r[10] + r[1] * r[13] + r[2] * r[16],

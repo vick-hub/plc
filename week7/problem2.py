@@ -9,6 +9,7 @@ def main():
     content = file1.readlines()
     type(content)
     for r in content:
+        r = r.strip()
         matrix_product = ([r[0] * r[9] + r[1] * r[12] + r[2] * r[15], r[0] * r[10] + r[1] * r[13] + r[2] * r[16],
                            r[0] * r[11] + r[1] * r[14] + r[2] * r[17]],
                           [r[3] * r[9] + r[4] * r[12] + r[5] * r[15], r[3] * r[10] + r[4] * r[13] + r[5] * r[16],

@@ -12,7 +12,7 @@ def main():
     print(path2)
     path3 = pathlib.Path('cortex/orange.json')
     print(path3)
-    path4 = path.absolute()
+    path4 = pathlib.Path('/cortex')
     print(path4)
     return os.EX_OK
 

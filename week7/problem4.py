@@ -11,7 +11,7 @@ def main():
         print(error)
     new_file = pathlib.Path(new_dir, 'reduce-nut.txt')
     with open(new_file, 'w') as f:
-        file = f.write('Hello, practicing working with files and path')
+        f.write('Hello, practicing working with files and path')
     return os.EX_OK
 
 

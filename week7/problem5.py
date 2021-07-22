@@ -6,13 +6,13 @@ import pathlib
 def main():
     path = pathlib.Path('cortex')
     print(path)
-    path1 = pathlib.Path('cortex/nothing.txt')
+    path1 = path/'nothing.txt'
     print(path1)
-    path2 = pathlib.Path('cortex/image.jpg')
+    path2 = path/'image.jpg'
     print(path2)
-    path3 = pathlib.Path('cortex/orange.json')
+    path3 = path/'orange.json'
     print(path3)
-    path4 = pathlib.Path('/home/victor/cortex')
+    path4 = '/home/victor/path'
     print(path4)
     return os.EX_OK
 

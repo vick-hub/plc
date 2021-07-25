@@ -29,7 +29,7 @@ def main():
         data = fr.readlines()
         with open(file2, 'w') as fw:
             for line in data:
-#                values = line.split()
+                values = line.split()
 #                dict2['M'] = values[1]
 #                dict2['N'] = values[2]
 #                for key, value in dict2.items():

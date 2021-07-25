@@ -9,7 +9,7 @@ def main():
     dict2 = {}
     x = datetime.datetime.now()
 
-    path = 'stock1'
+    path = 'stock'
     try:
         os.makedirs(path)  # creating stock folder
     except OSError as er:
@@ -19,7 +19,7 @@ def main():
         for key, value in dict1.items():
             f.write('%s %s\n' % (key, value))
 
-    path = 'product1'
+    path = 'product'
     try:
         os.makedirs(path)  # creating product folder
     except OSError as er:

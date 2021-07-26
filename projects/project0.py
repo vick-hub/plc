@@ -5,7 +5,7 @@ import datetime
 
 x = datetime.datetime.now()
 dict1 = {"A": random.randint(0, 50), "B": random.randint(0, 50), "C": random.randint(0, 50)}
-path = 'stock2'
+path = 'stock'
 try:
     os.makedirs(path)  # creating stock folder
 except OSError as er:
@@ -15,7 +15,7 @@ with open(file1, 'w') as f:
     for key, value in dict1.items():
         print(key, value, file=f)
 
-path = 'product1'
+path = 'product'
 try:
     os.makedirs(path)  # creating product folder
 except OSError as er:

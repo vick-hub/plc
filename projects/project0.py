@@ -27,6 +27,7 @@ def main():
     list1 = []
     dict2 = {}
 
+    # fixme: you have your function inside main(); is this what you wanted?
     def consumption():
         with open(file1, 'r') as fr:
             with open(file2, 'w') as fw:

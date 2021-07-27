@@ -23,19 +23,23 @@ except OSError as er:
 file2 = os.path.join(path, str(x) + '.txt')  # creating timestamp file
 
 list1 = []
-with open(file1, 'r') as f:
-    def consumption(x, y, z):
+
+
+def consumption():
+    with open(file1, 'r') as f:
         lines = f.readlines()
         for line in lines:
             list1.append(line.split())
-        a = (list1[0][1])
-        b = list1[1][1]
-        c = list1[2][1]
-        return a, b, c
+        x = int(list1[0][1]) // 2
+        y = int(list1[1][1]) // 3
+        z = int(list1[2][1]) // 4
+        m = x + y + z
+        n = int(list1[0][1]) + z
+        return m, n
 
 
 def main():
-    consumption(2, 3, 4)
+    print(consumption())
 
     return os.EX_OK
 

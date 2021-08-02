@@ -7,7 +7,7 @@ import glob
 
 x = datetime.datetime.now()
 dict1 = {"A": random.randint(0, 50), "B": random.randint(0, 50), "C": random.randint(0, 50)}
-path = 'stock3'
+path = 'stock'
 try:
     os.makedirs(path)  # creating stock folder
 except OSError as er:
@@ -20,6 +20,7 @@ try:
 except OSError as er:
     print(er)
 file2 = os.path.join(path1, str(x) + '.txt')  # creating timestamp file
+files = glob.glob('stock/*.txt')  # glob help us to analyze multiple files
 
 list1 = []
 list2 = []
@@ -35,8 +36,6 @@ def stock():
 
 
 def stock_level():
-    files = glob.glob('stock3/*.txt')  # glob help us to analyze multiple files
-#    for dirName, fileList in os.walk('stock2'):
     for file in files:
         with open(file, 'r') as f:
             lines = f.readlines()
@@ -53,8 +52,6 @@ def stock_level():
 
 
 def product():
-    files = glob.glob('stock3/*.txt')
-#    for file in files:
     index = random.randrange(0, len(files)+1)
     file = files[index]
 #    print(file)

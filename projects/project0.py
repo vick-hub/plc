@@ -13,20 +13,29 @@ try:
 except OSError as er:
     print(er)
 file1 = os.path.join(path, str(x) + '.txt')  # creating timestamp file
+
+path1 = 'product'
+try:
+    os.makedirs(path1)  # creating product folder
+except OSError as er:
+    print(er)
+file2 = os.path.join(path1, str(x) + '.txt')  # creating timestamp file
+
 list1 = []
-set1 = set()
+list2 = []
 dict2 = {}
 dict3 = {}
+dict4 = {}
 
 
 def stock():
     with open(file1, 'w') as f:
         for key, value in dict1.items():
-            f.write('%s %d\n' % (key, value))
+            f.write('%s %d\n' % (key, value))  # %s shows where the string is to be specified
 
 
 def stock_level():
-    files = glob.glob('stock3/*.txt')  # help us to analyze multiple files
+    files = glob.glob('stock3/*.txt')  # glob help us to analyze multiple files
 #    for dirName, fileList in os.walk('stock2'):
     for file in files:
         with open(file, 'r') as f:
@@ -43,8 +52,34 @@ def stock_level():
         print(key, value)
 
 
+def product():
+    files = glob.glob('stock3/*.txt')
+#    for file in files:
+    index = random.randrange(0, len(files)+1)
+    file = files[index]
+#    print(file)
+    with open(file, 'r') as fr:
+        lines = fr.readlines()
+        for line in lines:
+            list2.append(line.split())
+#    print(list2)
+    x = int(list2[0][1]) // 2
+    t = x // 2
+    y = int(list2[1][1]) // 3
+    z = int(list2[2][1]) // 2
+    w = z // 4
+    m = t + y + w
+    n = x + w
+    dict4['M'] = m
+    dict4['N'] = n
+    with open(file2, 'w') as fw:
+        for k, v in dict4.items():
+            fw.write(F'{k} {v}\n')
+
+
 def main():
     stock()
+    product()
     stock_level()
     return os.EX_OK
 

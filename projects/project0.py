@@ -6,7 +6,7 @@ import glob
 
 
 x = datetime.datetime.now()
-dict1 = {"A": random.randint(0, 50), "B": random.randint(0, 50), "C": random.randint(0, 50)}
+dict1 = {"A": random.randint(8, 50), "B": random.randint(8, 50), "C": random.randint(8, 50)}
 path = 'stock'
 try:
     os.makedirs(path)  # creating stock folder

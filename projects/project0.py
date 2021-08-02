@@ -21,12 +21,16 @@ except OSError as er:
     print(er)
 file2 = os.path.join(path1, str(x) + '.txt')  # creating timestamp file
 files = glob.glob('stock/*.txt')  # glob help us to analyze multiple files
+files1 = glob.glob('product/*.txt')
 
 list1 = []
 list2 = []
+list3 = []
 dict2 = {}
 dict3 = {}
 dict4 = {}
+dict5 = {}
+dict6 = {}
 
 
 def stock():
@@ -37,25 +41,28 @@ def stock():
 
 def stock_level():
     for file in files:
-        with open(file, 'r') as f:
-            lines = f.readlines()
-            for line in lines:
-                list1.append(line.split())
-        dict2.update(list1)
-        for key, value in dict2.items():
-            if key in dict3:
-                dict3[key] += int(value)
-            else:
-                dict3[key] = int(value)
+        try:
+            with open(file, 'r') as f:
+                lines = f.readlines()
+                for line in lines:
+                    list1.append(line.split())
+            dict2.update(list1)
+            for key, value in dict2.items():
+                if key in dict3:
+                    dict3[key] += int(value)
+                else:
+                    dict3[key] = int(value)
+        except FileNotFoundError:
+            print("The file doesn't exist")
     for key, value in dict3.items():
         print(key, value)
 
 
 def product():
     index = random.randrange(0, len(files)+1)
-    file = files[index]
-#    print(file)
-    with open(file, 'r') as fr:
+    file_empty = files[index]
+#    print(file_empty)
+    with open(file_empty, 'r') as fr:
         lines = fr.readlines()
         for line in lines:
             list2.append(line.split())
@@ -69,15 +76,42 @@ def product():
     n = x + w
     dict4['M'] = m
     dict4['N'] = n
+    os.remove(file_empty)
     with open(file2, 'w') as fw:
         for k, v in dict4.items():
             fw.write(F'{k} {v}\n')
 
 
+def product_level():
+    for file3 in files1:
+        with open(file3, 'r') as fs:
+            lines = fs.readlines()
+            for line in lines:
+                list3.append(line.split())
+        dict5.update(list3)
+        for key, value in dict5.items():
+            if key in dict6:
+                dict6[key] += int(value)
+            else:
+                dict6[key] = int(value)
+    for key, value in dict6.items():
+        print(key, value)
+
+
+def production():
+    ratio = random.randint(1, 11)
+    if ratio <= 4:
+        return stock()
+    else:
+        return product()
+
+
 def main():
-    stock()
-    product()
+    production()
+    print('stock level: ')
     stock_level()
+    print('product level: ')
+    product_level()
     return os.EX_OK
 
 

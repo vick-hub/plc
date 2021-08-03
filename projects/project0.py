@@ -60,23 +60,25 @@ def stock_level():
 
 def product():
     index = random.randrange(0, len(files)+1)
-    file_empty = files[index]
-#    print(file_empty)
-    with open(file_empty, 'r') as fr:
-        lines = fr.readlines()
-        for line in lines:
-            list2.append(line.split())
-#    print(list2)
-    x = int(list2[0][1]) // 2
-    t = x // 2
-    y = int(list2[1][1]) // 3
-    z = int(list2[2][1]) // 2
-    w = z // 4
-    m = t + y + w
-    n = x + w
-    dict4['M'] = m
-    dict4['N'] = n
-    os.remove(file_empty)
+    try:
+        file_empty = files[index]
+        with open(file_empty, 'r') as fr:
+            lines = fr.readlines()
+            for line in lines:
+                list2.append(line.split())
+    #    print(list2)
+        x = int(list2[0][1]) // 2
+        t = x // 2
+        y = int(list2[1][1]) // 3
+        z = int(list2[2][1]) // 2
+        w = z // 4
+        m = t + y + w
+        n = x + w
+        dict4['M'] = m
+        dict4['N'] = n
+        os.remove(file_empty)
+    except IndexError as err:
+        print(err)
     with open(file2, 'w') as fw:
         for k, v in dict4.items():
             fw.write(F'{k} {v}\n')

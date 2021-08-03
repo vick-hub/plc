@@ -53,7 +53,7 @@ def stock_level():
                 else:
                     dict3[key] = int(value)
         except FileNotFoundError:
-            print("The file doesn't exist")
+            pass
     for key, value in dict3.items():
         print(key, value)
 
@@ -77,8 +77,8 @@ def product():
         dict4['M'] = m
         dict4['N'] = n
         os.remove(file_empty)
-    except IndexError as err:
-        print(err)
+    except IndexError:
+        pass
     with open(file2, 'w') as fw:
         for k, v in dict4.items():
             fw.write(F'{k} {v}\n')

@@ -76,7 +76,7 @@ def product():
         n = x + w
         dict4['M'] = m
         dict4['N'] = n
-        os.remove(file_empty)
+#        os.remove(file_empty)
     except IndexError:
         pass
     with open(file2, 'w') as fw:

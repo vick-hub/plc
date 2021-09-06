@@ -1,0 +1,12 @@
+problem/score
+0/0 # repeat
+1/2 # pending amendments for full score (paffs)
+2/8 # paffs
+3/8 # paffs
+4/8 # paffs
+5/7 # paffs
+6/7 # paffs
+7/7 # paffs
+8/7 # paffs
+9/4
+Total/58/100:38/50
